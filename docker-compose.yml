@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+
+  redis-json:
+    image: redislabs/rejson:latest
+    container_name: src-redis-json
+    command: |
+      redis-server
+      --save 20 1
+      --loglevel warning 
+      --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    volumes:
+      - redis-data:/data
+
+  spring-redis-caching:
+    image: giangi/spring-redis-caching
+    container_name: src-spring-redis-caching
+    environment:
+      REDIS_HOST: src-redis-json
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    ports:
+      - "8090:8080"
+
+volumes:
+  redis-data:
+    external: false
