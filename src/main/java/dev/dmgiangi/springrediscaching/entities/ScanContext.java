@@ -27,10 +27,7 @@ public class ScanContext {
     private Double anDouble;
 
     private Integer anInteger;
-
-    @Setter(AccessLevel.NONE)
-    @Getter(AccessLevel.NONE)
-    private final Set<Scan> scans = new HashSet<>();
+    private Set<Scan> scans = new HashSet<>();
 
     public void addScan(Scan newScan) {
         scans.add(newScan);
