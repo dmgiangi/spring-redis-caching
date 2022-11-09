@@ -1,0 +1,10 @@
+spring:
+  redis:
+    host: ToDefine
+    port: 12345
+    password: ToDefine
+    database: 0
+    client-type: LETTUCE
+  cache:
+    redis:
+      use-key-prefix: false
