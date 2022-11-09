@@ -6,6 +6,7 @@ import dev.dmgiangi.springrediscaching.entities.dtos.ScanContextDto;
 import dev.dmgiangi.springrediscaching.entities.dtos.ScanContextRto;
 import dev.dmgiangi.springrediscaching.entities.mappers.ScanContextMapper;
 import dev.dmgiangi.springrediscaching.entities.repositories.ScanContextRepository;
+import dev.dmgiangi.springrediscaching.exceptions.EntityDoesNotExist;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ import java.util.UUID;
 @Service
 @AllArgsConstructor
 public class ScanContextService {
-    private ScanContextRepository ScanContextRepository;
+    private ScanContextRepository scanContextRepository;
 
     public ScanContextDto createFrom(ScanContextRto request) {
         ScanContext scanContext = ScanContextMapper.MAP.fromRto(request);
@@ -25,8 +26,23 @@ public class ScanContextService {
         scanContext.addScan(new Scan(UUID.randomUUID(), "first scan"));
         scanContext.addScan(new Scan(UUID.randomUUID(), "second scan"));
 
-        ScanContextRepository.save(scanContext);
+        scanContextRepository.save(scanContext);
 
         return ScanContextMapper.MAP.toDto(scanContext);
+    }
+
+    public ScanContextDto getById(UUID id) {
+        ScanContext scanContext = scanContextRepository
+                .findById(id)
+                .orElseThrow(() -> new EntityDoesNotExist("this scan context does not exist"));
+
+        return ScanContextMapper.MAP.toDto(scanContext);
+    }
+
+    public void deleteById(UUID id) {
+        if(scanContextRepository.existsById(id))
+            scanContextRepository.deleteById(id);
+        else
+            throw new EntityDoesNotExist("this scan context does not exist");
     }
 }
