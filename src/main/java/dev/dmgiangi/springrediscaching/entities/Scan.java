@@ -5,6 +5,11 @@ import lombok.*;
 import java.util.UUID;
 
 
+/**
+ * Scan Entity hold the information os a single scan
+ *
+ * @author Gianluigi De Marco
+ */
 @Getter
 @Setter
 @ToString

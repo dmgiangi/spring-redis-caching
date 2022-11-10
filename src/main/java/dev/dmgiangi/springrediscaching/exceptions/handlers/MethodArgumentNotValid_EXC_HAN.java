@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 @ControllerAdvice
 public class MethodArgumentNotValid_EXC_HAN {
     /**
-     * methodArgumentNotValidExceptionHandler.
+     * handle exceptions of {@link org.springframework.web.bind.MethodArgumentNotValidException} type
      *
      * @param e       a {@link org.springframework.web.bind.MethodArgumentNotValidException} object
      * @param request a {@link javax.servlet.http.HttpServletRequest} object

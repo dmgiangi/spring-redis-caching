@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 @ControllerAdvice
 public class IllegalArgument_EXC_HAN {
     /**
-     * illegalArgumentExceptionHandler.
+     * Handle exceptions of {@link IllegalArgumentException} type
      *
      * @param e       a {@link java.lang.IllegalArgumentException} object
      * @param request a {@link javax.servlet.http.HttpServletRequest} object

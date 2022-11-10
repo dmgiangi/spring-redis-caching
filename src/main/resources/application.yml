@@ -5,6 +5,3 @@ spring:
     password: ToDefine
     database: 0
     client-type: LETTUCE
-  cache:
-    redis:
-      use-key-prefix: false
