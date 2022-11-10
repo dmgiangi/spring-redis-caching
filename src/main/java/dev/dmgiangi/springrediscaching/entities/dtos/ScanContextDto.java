@@ -9,6 +9,11 @@ import java.time.LocalDate;
 import java.util.Set;
 import java.util.UUID;
 
+/**
+ * ScanContextDto class.
+ *
+ * @author Gianluigi De Marco
+ */
 @NoArgsConstructor
 @Setter
 @Getter

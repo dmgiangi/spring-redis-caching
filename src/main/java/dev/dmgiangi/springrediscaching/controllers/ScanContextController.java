@@ -97,7 +97,7 @@ public class ScanContextController {
                                     mediaType = MediaType.APPLICATION_JSON_VALUE,
                                     schema = @Schema(implementation = ErrorDto.class)))
             })
-    public ScanContextDto getScanContext(@PathVariable UUID id){
+    public ScanContextDto getScanContext(@PathVariable UUID id) {
         return scanContextService.getById(id);
     }
 
@@ -131,7 +131,7 @@ public class ScanContextController {
                                     mediaType = MediaType.APPLICATION_JSON_VALUE,
                                     schema = @Schema(implementation = ErrorDto.class)))
             })
-    public ResponseEntity<Void> deleteScanContext(@PathVariable UUID id){
+    public ResponseEntity<Void> deleteScanContext(@PathVariable UUID id) {
         scanContextService.deleteById(id);
         return ResponseEntity.ok().build();
     }

@@ -12,6 +12,11 @@ import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.lettuce.LettuceClientConfiguration;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 
+/**
+ * LettuceConfiguration class.
+ *
+ * @author Gianluigi De Marco
+ */
 @Configuration
 @ConfigurationProperties(prefix = "spring.redis")
 @Setter
@@ -21,6 +26,12 @@ public class LettuceConfiguration {
 
     private int database;
 
+    /**
+     * redisConnectionFactory.
+     *
+     * @param defaultRedisConfig a {@link org.springframework.data.redis.connection.RedisConfiguration} object
+     * @return a {@link org.springframework.data.redis.connection.RedisConnectionFactory} object
+     */
     @Bean
     @Primary
     public RedisConnectionFactory redisConnectionFactory(RedisConfiguration defaultRedisConfig) {
@@ -30,6 +41,11 @@ public class LettuceConfiguration {
         return new LettuceConnectionFactory(defaultRedisConfig, clientConfig);
     }
 
+    /**
+     * defaultRedisConfig.
+     *
+     * @return a {@link org.springframework.data.redis.connection.RedisConfiguration} object
+     */
     @Bean
     public RedisConfiguration defaultRedisConfig() {
         RedisStandaloneConfiguration config = new RedisStandaloneConfiguration();

@@ -9,6 +9,11 @@ import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotEmpty;
 
+/**
+ * ScanContextRto class.
+ *
+ * @author Gianluigi De Marco
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

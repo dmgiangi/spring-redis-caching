@@ -1,6 +1,9 @@
 package dev.dmgiangi.springrediscaching.entities;
 
-import lombok.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
@@ -10,6 +13,11 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
+/**
+ * Scan Entity hold the information of a ScanContext
+ *
+ * @author Gianluigi De Marco
+ */
 @RedisHash(value = "scan-context")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Getter
@@ -29,10 +37,20 @@ public class ScanContext {
     private Integer anInteger;
     private Set<Scan> scans = new HashSet<>();
 
+    /**
+     * add a scan to the scan context
+     *
+     * @param newScan a {@link dev.dmgiangi.springrediscaching.entities.Scan} object
+     */
     public void addScan(Scan newScan) {
         scans.add(newScan);
     }
 
+    /**
+     * Get an unmodifiable Set of the scan.
+     *
+     * @return a {@link java.util.Set} object
+     */
     public Set<Scan> getScans() {
         return Collections.unmodifiableSet(scans);
     }

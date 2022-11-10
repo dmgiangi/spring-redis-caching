@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 @ControllerAdvice
 public class EntityDoesNotExists_EXC_HAN {
     /**
-     * entityDoesNotExistExceptionHandler.
+     * Handle exceptions of {@link dev.dmgiangi.springrediscaching.exceptions.EntityDoesNotExist} type
      *
      * @param e       a {@link dev.dmgiangi.springrediscaching.exceptions.EntityDoesNotExist} object
      * @param request a {@link javax.servlet.http.HttpServletRequest} object
@@ -32,7 +32,7 @@ public class EntityDoesNotExists_EXC_HAN {
 
         return new ResponseEntity<>(
                 new ErrorDto()
-                        .setError("aswetwegtfw")
+                        .setError("The Requested resource does not exist")
                         .setErrorMessage(e.getMessage())
                         .setStatus(HttpStatus.NOT_FOUND)
                         .setPath(

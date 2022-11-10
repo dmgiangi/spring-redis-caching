@@ -60,6 +60,11 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.6.12</version>
+        </dependency>
 
         <!-- TEST DEPENDENCY -->
         <dependency>
@@ -93,6 +98,7 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <!-- ATTACH POSTPROCESSOR CONTAINER -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -112,6 +118,7 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
+            <!-- CREATE AND PUSH DOCKER CONTAINER -->
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
@@ -154,6 +161,17 @@
                             </platform>
                         </platforms>
                     </from>
+                </configuration>
+            </plugin>
+            <!-- JAVADOC PLUGIN -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.4.1</version>
+                <configuration>
+                    <level>
+                        package
+                    </level>
                 </configuration>
             </plugin>
         </plugins>

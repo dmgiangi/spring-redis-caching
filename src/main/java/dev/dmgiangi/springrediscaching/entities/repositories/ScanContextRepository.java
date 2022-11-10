@@ -6,6 +6,11 @@ import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
+/**
+ * ScanContextRepository interface.
+ *
+ * @author Gianluigi De Marco
+ */
 @Repository
 public interface ScanContextRepository extends CrudRepository<ScanContext, UUID> {
 }
