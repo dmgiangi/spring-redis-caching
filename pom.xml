@@ -9,7 +9,7 @@
     </parent>
     <groupId>dev.dmgiangi</groupId>
     <artifactId>spring-redis-caching</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>spring-redis-caching</name>
     <description>this is an example usage of spring redis through spring boot and spring data redis.</description>
 
