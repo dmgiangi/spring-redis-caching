@@ -50,7 +50,6 @@ public class LettuceConfiguration {
     public RedisConfiguration defaultRedisConfig() {
         RedisStandaloneConfiguration config = new RedisStandaloneConfiguration();
         config.setDatabase(database);
-        System.out.println(database);
         config.setHostName(host);
         config.setPassword(RedisPassword.of(password));
         return config;

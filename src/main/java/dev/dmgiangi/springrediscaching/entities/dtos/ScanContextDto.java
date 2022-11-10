@@ -1,6 +1,7 @@
 package dev.dmgiangi.springrediscaching.entities.dtos;
 
 import dev.dmgiangi.springrediscaching.entities.Scan;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,6 +16,7 @@ import java.util.UUID;
  * @author Gianluigi De Marco
  */
 @NoArgsConstructor
+@AllArgsConstructor
 @Setter
 @Getter
 public class ScanContextDto {

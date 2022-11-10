@@ -1,6 +1,5 @@
 package dev.dmgiangi.springrediscaching.services;
 
-import dev.dmgiangi.springrediscaching.entities.Scan;
 import dev.dmgiangi.springrediscaching.entities.ScanContext;
 import dev.dmgiangi.springrediscaching.entities.dtos.ScanContextDto;
 import dev.dmgiangi.springrediscaching.entities.dtos.ScanContextRto;
@@ -34,10 +33,7 @@ public class ScanContextService {
         scanContext.setData(LocalDate.now());
         scanContext.setId(UUID.randomUUID());
 
-        scanContext.addScan(new Scan(UUID.randomUUID(), "first scan"));
-        scanContext.addScan(new Scan(UUID.randomUUID(), "second scan"));
-
-        scanContextRepository.save(scanContext);
+        scanContext = scanContextRepository.save(scanContext);
 
         return ScanContextMapper.MAP.toDto(scanContext);
     }

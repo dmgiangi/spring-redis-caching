@@ -3,7 +3,7 @@ version: '3.9'
 services:
 
   redis:
-    image: redis:7.0.5
+    image: redis:7.0.5-alpine
     container_name: src-redis
     ports:
       - "6379:6379"
