@@ -29,5 +29,5 @@ curl --location --request DELETE 'http://localhost:8080/scan-context/#UUID'
 ```
 in order to connect directly to te redis-cli use:
 ```bash
-docker exec -ti src-redis redis-cli -a 'eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81'
+docker exec -ti src-redis redis-cli -a eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
 ```
